@@ -127,7 +127,7 @@ Este design garante uma API robusta, organizada e extensível, adequada às nece
 
 ## 5. Frontend
 
-O frontend está implementado com **Express + Pug** como motor de templates, e utiliza **axios** para consumir a API que faz a "ponte" com a base de dados **MongoDB**.
+O frontend está implementado com **Express + Pug** como motor de templates, e utiliza **axios** para consumir a API que faz a "ponte" com a base de dados **MongoDB**. O frontend está configurado para ouvir na porta 25001.
 
 ### 5.1 Páginas principais
 
