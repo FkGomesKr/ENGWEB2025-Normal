@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h2.w3-center Eurovisão - Lista de Edições
+
+  div(class="w3-responsive w3-white w3-padding w3-card-4")
+    table(class="w3-table w3-striped w3-bordered w3-hoverable w3-large")
+      thead
+        tr(class="w3-blue")
+          th ID da Edição
+          th Ano da Edição
+          th País Organizador
+          th País Vencedor
+      tbody
+        each edicao in slist
+          tr
+            td
+              a(href=`/${edicao._id}`, class="w3-text-blue")= edicao._id
+            td= edicao.anoEdição
+            td
+              a(href=`/paises/${edicao.organizacao}`, class="w3-text-blue")= edicao.organizacao
+            td
+              a(href=`/paises/${edicao.vencedor}`, class="w3-text-blue")= edicao.vencedor

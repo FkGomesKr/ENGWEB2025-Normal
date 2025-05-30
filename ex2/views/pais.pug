@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h2.w3-center Eurovision - País: #{pais}
+
+  h3 Edições em que participou
+  if participou.length
+    div.w3-responsive.w3-white.w3-padding.w3-card-4
+      table.w3-table.w3-striped.w3-bordered.w3-hoverable.w3-small
+        thead
+          tr.w3-blue
+            th ID da Edição
+            th Ano
+            th Nome da Música
+            th Intérprete
+            th Venceu?
+        tbody
+          each ed in participou
+            tr
+              td
+                a(href=`/${ed._id}`, class="w3-text-blue")= ed._id
+              td= ed.anoEdição
+              td= ed.nomeMusica
+              td= ed.nomeInterprete
+              td= ed.venceu
+  else
+    p Nenhuma participação encontrada.
+
+  h3 Edições que organizou
+  if organizou.length
+    div.w3-responsive.w3-white.w3-padding.w3-card-4
+      table.w3-table.w3-striped.w3-bordered.w3-hoverable.w3-small
+        thead
+          tr.w3-blue
+            th ID da Edição
+            th Ano
+        tbody
+          each ed in organizou
+            tr
+              td
+                a(href=`/${ed._id}`, class="w3-text-blue")= ed._id
+              td= ed.anoEdição
+  else
+    p Nenhuma edição organizada encontrada.
+
+  br
+  a(href="/", class="w3-button w3-blue") Voltar à página principal
